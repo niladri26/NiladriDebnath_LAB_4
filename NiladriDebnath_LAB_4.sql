@@ -1,3 +1,4 @@
+Drop Database if exists `Ecommerce_DBMS`;
 create Database Ecommerce_DBMS;
 use Ecommerce_DBMS;
 CREATE TABLE if not exists supplier(
@@ -179,7 +180,7 @@ create procedure Display()
 Begin
 select s.supp_id as Supplier_Id,s.supp_name as Supplier_Name, avg(a.rat_ratstars) as Rating, 
 Case
-	when avg(a.rat_ratstars)=5 then "Excellent Service"
+    when avg(a.rat_ratstars)=5 then "Excellent Service"
     when avg(a.rat_ratstars)>4 then "Good Service"
     when avg(a.rat_ratstars)>2 then "Avg Service"
     else "Poor Service"
